@@ -1,4 +1,24 @@
-let arr = new Array('1', '2', '3', '4', '5');
+class Numbers {
+  constructor(){
+    this.numbers = []
+  }
+  // create a new player and save it in the collection
+  newNumber(num){
+    let p = new Number(num)
+    this.numbers.push(p)
+    return p
+  }
+  get allNumbers(){
+    return this.numbers
+  }
+}
+
+let list = new Numbers()
+list.newNumber("1")
+list.newNumber("2")
+list.newNumber("3")
+
+let arr = list.allNumbers
 let temp;
 
 const sortedArray = (arr) => {
