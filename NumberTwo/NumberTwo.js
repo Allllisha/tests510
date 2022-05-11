@@ -2,7 +2,7 @@ class Numbers {
   constructor(){
     this.numbers = []
   }
-  // create a new player and save it in the collection
+
   newNumber(num){
     let p = new Number(num)
     this.numbers.push(p)
