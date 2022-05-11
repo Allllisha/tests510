@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>File downloader</title>
+  </head>
+
+  <body>
+    <label>Filename</label>
+    <input type="text" id="filename" value="1.txt" />
+
+    <br /><br /><br />
+
+    <label for="text-value">Content</label>
+    <br />
+    <textarea id="text-val" rows="4">Some contents</textarea>
+    <br />
+    <input
+      type="button"
+      id="dwn-btn"
+      value="Download"
+    />
+
+    <script>
+      const download = (filename, text) => {
+        let element = document.createElement("a");
+        element.setAttribute(
+          "href",
+          "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+        );
+        element.setAttribute("download", filename);
+
+        element.style.display = "none";
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+      }
+
+      document.getElementById("dwn-btn").addEventListener(
+        "click",
+        function () {
+          let text = document.getElementById("text-val").value;
+          let filename = "1.txt";
+
+          download(filename, text);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
