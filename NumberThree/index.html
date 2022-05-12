@@ -44,7 +44,12 @@
       document.getElementById("dwn-btn").addEventListener(
         "click",
         function () {
-          let text = document.getElementById("text-val").value;
+          text = []
+          let val = document.getElementById("text-val").value;
+          for (let i = 1; i <= val; i++) {      
+           text.push(`0000000${i}`);
+           } 
+           
           let filename = "1.txt";
 
           download(filename, text);
