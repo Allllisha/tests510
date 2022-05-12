@@ -32,3 +32,12 @@ class Numbers {
   }
   
 }
+
+let list = new Numbers()
+list.newNumber("1")
+list.newNumber("2")
+list.newNumber("3")
+
+const sortedNewArr = list.sorted();
+console.log(sortedNewArr);
+console.log(list.reversed());
