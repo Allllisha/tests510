@@ -8,40 +8,27 @@ class Numbers {
     this.numbers.push(p)
     return p
   }
-  get allNumbers(){
-    return this.numbers
-  }
-}
 
-let list = new Numbers()
-list.newNumber("1")
-list.newNumber("2")
-list.newNumber("3")
-
-let arr = list.allNumbers
-let temp;
-
-const sortedArray = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] > arr[j]) {
-        temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+  sorted(){
+    let temp;
+    for (let i = 0; i < this.numbers.length; i++) {
+    for (let j = i + 1; j < this.numbers.length; j++) {
+      if (this.numbers[i] > this.numbers[j]) {
+        temp = this.numbers[i];
+        this.numbers[i] = this.numbers[j];
+        this.numbers[j] = temp;
       }
     }
   }
-  return arr;
-};
+  return this.numbers;
+  }
 
-const sortedNewArr = sortedArray(arr);
-console.log(sortedNewArr);
-
-const reversedArray = (arr) => {
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {      
-      newArr[i] = arr[arr.length - i - 1];
+  reversed(){
+      let newArr = [];
+  for (let i = 0; i < this.numbers.length; i++) {      
+      newArr[i] = this.numbers[this.numbers.length - i - 1];
   }   
   return newArr;
+  }
+  
 }
-console.log(reversedArray(arr));
