@@ -18,11 +18,7 @@
     <br />
     <textarea id="text-val" rows="4"></textarea>
     <br />
-    <input
-      type="button"
-      id="dwn-btn"
-      value="Download"
-    />
+    <input type="button" id="dwn-btn" value="Download" />
 
     <script>
       const download = (filename, text) => {
@@ -39,17 +35,17 @@
         element.click();
 
         document.body.removeChild(element);
-      }
+      };
 
       document.getElementById("dwn-btn").addEventListener(
         "click",
         function () {
-          text = []
+          text = [];
           let val = document.getElementById("text-val").value;
-          for (let i = 1; i <= val; i++) {      
-           text.push(`0000000${i}`);
-           } 
-           
+          for (let i = 1; i <= val; i++) {
+            text.push(`0000000${i}`);
+          }
+
           let filename = "1.txt";
 
           download(filename, text);
